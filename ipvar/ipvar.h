@@ -25,8 +25,11 @@
 #include <boost/tuple/tuple.hpp>
 
 // By default use windows shared memory on windows platform.
-// If you want to use boost shared memory on windows, comment the following line
+// If you want to use boost shared memory on windows, add WIN_USE_LINUX_LIKE_SHM to the compiler options
+
+#ifndef WIN_USE_LINUX_LIKE_SHM
 #define USE_WIN32_SHARED_MEMORY
+#endif
 
 
 // If windows, and USE_WIN32_SHARED_MEMORY is defined, set _shared_memory_ to bip::managed_windows_shared_memory, otherwise set it to managed_shared_memory
